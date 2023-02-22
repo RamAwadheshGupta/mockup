@@ -1,17 +1,57 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function FilterableProductTable()
+function FilterableProductTable({ products })
 {
   return (
     <div className='filterableproducttable'>
       <SearchBar />
-      <ProductTable />
+      <ProductTable products={products} />
     </div>
   );
 }
-function ProductTable()
+function ProductCategoryRow({ category })
 {
+  return (
+    <tr>
+      <th colSpan='2' style={{ border: "5px solid #32cbaf" }}>
+        {category}
+      </th>
+    </tr>
+
+  );
+}
+function ProductRow({ product })
+{
+  return (
+    <tr style={{ border: "5px solid #d58f12" }}>
+      <td>{product.name}</td>
+      <td>{product.price}</td>
+    </tr>
+  );
+}
+function ProductTable({ products })
+{
+  const row = [];
+  let lastCategory = null;
+  products.forEach(product =>
+  {
+    if (product.category !== lastCategory)
+    {
+      row.push(
+        <ProductCategoryRow
+          category={product.category}
+          key={product.category} />
+      );
+    }
+    row.push(
+      <ProductRow
+        product={product}
+        key={product.name} />
+    );
+    lastCategory = product.category;
+
+  });
   return (
     <div className='producttable'>
       <h4>ProductTable area</h4>
@@ -23,9 +63,9 @@ function ProductTable()
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th colSpan="2">ProductCategoryRow</th>
-          </tr>
+          {/*  <ProductCategoryRow /> */}
+          {row}
+          {/* <ProductRow /> */}
         </tbody>
       </table>
     </div>
@@ -58,7 +98,7 @@ function App()
   return (
     <div className="App">
       <h4>Welcome to mockup app</h4>
-      <FilterableProductTable />
+      <FilterableProductTable products={PRODUCTS} />
 
 
     </div>
