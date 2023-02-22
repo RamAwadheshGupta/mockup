@@ -32,7 +32,50 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.filterableproducttable {
+  border: 5px solid #78797a;
+  margin: 10px;
+  text-align: center;
+}
+
+.searchBar {
+  border: 5px solid rgb(83, 83, 235);
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.producttable {
+  border: 5px solid blueviolet;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  padding: 4px;
+}
+
+td {
+  padding: 2px;
 }
