@@ -24,9 +24,19 @@ function ProductCategoryRow({ category })
 function ProductRow({ product })
 {
   return (
-    <tr style={{ border: "5px solid #d58f12" }}>
-      <td>{product.name}</td>
-      <td>{product.price}</td>
+    <tr>
+      <td style={{
+        borderBottom: "1px solid #ddd",
+        borderLeft: "1px solid #ddd",
+        borderRight: "0px solid #ddd",
+        borderTop: "1px solid #ddd",
+      }}>{product.name}</td>
+      <td style={{
+        borderBottom: "1px solid #ddd",
+        borderLeft: "0px solid #ddd",
+        borderRight: "1px solid #ddd",
+        borderTop: "1px solid #ddd",
+      }}>{product.price}</td>
     </tr>
   );
 }
