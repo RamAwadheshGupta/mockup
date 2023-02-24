@@ -79,3 +79,17 @@ th {
 td {
   padding: 2px;
 }
+
+.product_td {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 0px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.product_tds {
+  border-bottom: 1px solid #ddd;
+  border-left: 0px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
